@@ -7,7 +7,7 @@ It features a **Node.js/Express/Mongoose** backend and a **Next.js React** front
 ---
 
 ### 🌐 [Demo URL](https://drive.google.com/file/d/1K7f4QTKxvQaqrPNVxsISo2pHt-43n0bG/view?usp=drive_link)
-
+### 🌐 [archtech diagram](https://drive.google.com/file/d/11ktoJVi9Z7ixUIHLyw8xUorChlbptXsX/view?usp=drive_link)
 ---
 
 ## Features
