@@ -185,7 +185,7 @@ def retrieve_ui_templates(input_str: str) -> dict:
         )
 
         template_id = str(uuid.uuid4())
-
+        # existing data or template return
         # if results["documents"] and results["metadatas"][0]["component"] == intent["component"]:
         if (
             results.get("metadatas") and 
