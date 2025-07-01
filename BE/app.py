@@ -157,18 +157,18 @@ def retrieve_ui_templates(input_str: str) -> dict:
         }}
         """
 
-        # Call LLM and strip whitespace
-        intent_response = llm.invoke(intent_prompt).content.strip()
-        print("[DEBUG] LLM Raw Response:", repr(intent_response))
+        # # Call LLM and strip whitespace
+        # intent_response = llm.invoke(intent_prompt).content.strip()
+        # print("[DEBUG] LLM Raw Response:", repr(intent_response))
 
-        # Remove markdown formatting if accidentally included
-        cleaned_response = re.sub(r"^```json\s*|```$", "", intent_response).strip()
+        # # Remove markdown formatting if accidentally included
+        # cleaned_response = re.sub(r"^```json\s*|```$", "", intent_response).strip()
 
-        # Try to parse JSON
-        try:
-            intent = json.loads(cleaned_response)
-        except json.JSONDecodeError as e:
-            raise HTTPException(status_code=500, detail=f"LLM returned invalid JSON: {e}\nRaw: {cleaned_response}")
+        # # Try to parse JSON
+        # try:
+        #     intent = json.loads(cleaned_response)
+        # except json.JSONDecodeError as e:
+        #     raise HTTPException(status_code=500, detail=f"LLM returned invalid JSON: {e}\nRaw: {cleaned_response}")
 
         # Create query for ChromaDB
         query_text = f"{intent['component']} {intent['purpose']} {','.join(intent['fields'])}"
